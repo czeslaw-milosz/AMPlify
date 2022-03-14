@@ -258,7 +258,7 @@ def main():
     # save to tsv or xlsx    
     if args.out_format is not None:
         print('\nSaving results...')
-        out_name = 'AMPlify_results_' + time.strftime('%Y%m%d%H%M%S', time.localtime())
+        out_name = 'AMPlify_results_' + args.seqs.split("/")[-1].replace(".fasta", "_")
         if (args.out_format).lower() == 'txt':
             out_name = out_name + '.txt'
             if os.path.isfile(args.out_dir + '/' + out_name):
